@@ -1,0 +1,39 @@
+{
+  "name": "react-awesome-gravatar",
+  "version": "1.0.0",
+  "description": "Just another react gravatar component",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "lint": "tslint --project .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "react",
+    "gravatar",
+    "react-component"
+  ],
+  "author": "Ignacio Canó <ignaciojcano@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ignaciojcano/react-awesome-gravatar"
+  },
+  "bugs": {
+    "url": "https://github.com/ignaciojcano/react-awesome-gravatar/issues"
+  },
+  "homepage": "https://github.com/ignaciojcano/react-awesome-gravatar#readme",
+  "devDependencies": {
+    "tslint": "^5.10.0",
+    "tslint-config-airbnb": "^5.9.2",
+    "typescript": "^2.9.1"
+  },
+  "dependencies": {
+    "@types/md5": "^2.1.32",
+    "@types/node": "^10.3.2",
+    "@types/react": "^16.3.17",
+    "md5": "^2.2.1",
+    "react": "^16.4.0"
+  }
+}
