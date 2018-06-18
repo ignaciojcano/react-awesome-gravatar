@@ -1,4 +1,4 @@
-import { stringify } from 'querystring';
+import { stringify } from 'query-string';
 import md5 from 'md5';
 
 export interface GravatarOptions {
