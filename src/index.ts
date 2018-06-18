@@ -1,4 +1,4 @@
 import Gravatar from './Gravatar';
-export { getGravatarUrl } from './lib';
+export { getGravatarUrl, GravatarOptions } from './lib';
 
 export default Gravatar;
