@@ -11,12 +11,11 @@ yarn add react-awesome-gravatar
 ### Gravatar component
 
 ```typescript
-import { Gravatar } from 'react-awesome-gravatar';
+import Gravatar from 'react-awesome-gravatar';
 
 <Gravatar email="example@example.com" />
 // Should generate an <img /> tag with the correct gravatar profile url: https://www.gravatar.com/avatar/23463b99b62a72f26ed677cc556c44e8
-
-import { Gravatar, GravatarOptions } from 'react-awesome-gravatar';
+import { GravatarOptions } from 'react-awesome-gravatar';
 const options: GravatarOptions = {
     size: 50,
 }; // check below for all available options
