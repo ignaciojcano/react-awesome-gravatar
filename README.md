@@ -97,4 +97,8 @@ const profileUrl = getGravatarUrl('example@example.com', options);
 ```
 
 ## Tests
-@TODO
+
+Tests are configured with Jest, to run them use:
+```sh
+npm run test
+```

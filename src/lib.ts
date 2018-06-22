@@ -13,6 +13,7 @@ export const getGravatarUrl = (email: string, options: GravatarOptions = {}): st
   const query: any = { ...options };
   if (options.defaultUrl) {
     query.default = options.defaultUrl;
+    delete query.defaultUrl;
   }
   const emailHash = md5(email);
   return `https://www.gravatar.com/avatar/${emailHash}?${stringify(query)}`;
