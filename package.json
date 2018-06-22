@@ -5,6 +5,7 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
+    "prepublish": "npm run lint && npm run test && npm run build",
     "build": "tsc",
     "lint": "tslint --project .",
     "test": "jest"
@@ -44,6 +45,8 @@
     "react": "^16.4.0"
   },
   "jest": {
+    "verbose": true,
+    "collectCoverage": true,
     "transform": {
       "^.+\\.tsx?$": "ts-jest"
     },
