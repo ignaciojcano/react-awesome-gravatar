@@ -29,7 +29,7 @@ describe('getGravatarUrl', () => {
       default: 'monsterid',
       size: 250,
     };
-    const textComponent = (props) => {
+    const textComponent = (props: any) => {
       const { src, ...rest } = props;
 
       return (
