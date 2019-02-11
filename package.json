@@ -1,6 +1,6 @@
 {
   "name": "react-awesome-gravatar",
-  "version": "1.0.5",
+  "version": "2.0.0",
   "description": "Just another react gravatar component",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -34,6 +34,7 @@
     "@types/react-test-renderer": "^16.0.1",
     "jest": "^23.1.0",
     "react-test-renderer": "^16.4.1",
+    "retire": "^2.0.2",
     "ts-jest": "^22.4.6",
     "tslint": "^5.10.0",
     "tslint-config-airbnb": "^5.9.2",

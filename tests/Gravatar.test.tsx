@@ -8,7 +8,7 @@ describe('getGravatarUrl', () => {
 
   it('Renders the default img tag with the correct url', () => {
     const component = create(
-      <Gravatar email={email} />,
+      <Gravatar email={email}>{src => (<img src={src} />)}</Gravatar>,
     );
     expect(component.toJSON()).toMatchSnapshot();
   });
@@ -19,25 +19,7 @@ describe('getGravatarUrl', () => {
       size: 250,
     };
     const component = create(
-      <Gravatar email={email} options={options} />,
-    );
-    expect(component.toJSON()).toMatchSnapshot();
-  });
-
-  it('Renders a custom component with the correct url passed in through props', () => {
-    const options: GravatarOptions = {
-      default: 'monsterid',
-      size: 250,
-    };
-    const textComponent = (props: any) => {
-      const { src, ...rest } = props;
-
-      return (
-        <text value={src} {...rest}/>
-      );
-    };
-    const component = create(
-      <Gravatar email={email} options={options} component={textComponent} />,
+      <Gravatar email={email} options={options}>{src => (<img src={src} />)}</Gravatar>,
     );
     expect(component.toJSON()).toMatchSnapshot();
   });

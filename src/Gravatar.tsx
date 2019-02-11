@@ -1,33 +1,15 @@
 import * as React from 'react';
 import { getGravatarUrl, GravatarOptions } from './lib';
 
-export interface GravatarProps extends React.ImgHTMLAttributes<any> {
+export interface GravatarProps {
   email: string;
+  children(src: string): JSX.Element;
   options?: GravatarOptions;
-  component?: any;
 }
 
-export default class Gravatar extends React.PureComponent<GravatarProps, {}> {
-  static defaultProps: Partial<GravatarProps> = {
-    component: (props: any) => {
-      return (
-        <img { ...props }/>
-      );
-    },
-  };
+const gravatar: React.SFC<GravatarProps> = (props:GravatarProps): JSX.Element => {
+  const { email, options, children } = props;
+  return children(getGravatarUrl(email, options));
+};
 
-  buildComponentProps() {
-    const componentProps = {
-      ...this.props,
-      src: getGravatarUrl(this.props.email, this.props.options),
-    };
-    delete componentProps.email;
-    delete componentProps.options;
-    delete componentProps.component;
-    return componentProps;
-  }
-
-  render(): JSX.Element {
-    return this.props.component(this.buildComponentProps());
-  }
-}
+export default gravatar;
