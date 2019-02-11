@@ -7,9 +7,9 @@ export interface GravatarProps {
   options?: GravatarOptions;
 }
 
-const Gravatar: React.SFC<GravatarProps> = (props:GravatarProps): JSX.Element => {
+const gravatar: React.SFC<GravatarProps> = (props:GravatarProps): JSX.Element => {
   const { email, options, children } = props;
   return children(getGravatarUrl(email, options));
 };
 
-export default Gravatar;
+export default gravatar;
