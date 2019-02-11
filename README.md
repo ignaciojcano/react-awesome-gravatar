@@ -13,48 +13,20 @@ yarn add react-awesome-gravatar
 ```typescript
 import Gravatar from 'react-awesome-gravatar';
 
-<Gravatar email="example@example.com" />
+<Gravatar email={email}>
+  { url => (<img src={url} />) }
+</Gravatar>
 // Should generate an <img /> tag with the correct gravatar profile url: https://www.gravatar.com/avatar/23463b99b62a72f26ed677cc556c44e8
 import { GravatarOptions } from 'react-awesome-gravatar';
 const options: GravatarOptions = {
     size: 50,
 }; // check below for all available options
-<Gravatar email="example@example.com" options={ options } />
+<Gravatar email="example@example.com" options={ options }>
+  { url => (<img src={url} />) }
+</Gravatar>
 // Should generate an <img /> tag with the correct gravatar profile url: https://www.gravatar.com/avatar/23463b99b62a72f26ed677cc556c44e8?size=50
 
 ```
-
-There is an optional third prop, called `component`, this prop is used to change how the Gravatar component renders, allowing full cuztomization of the components output.
-
-It should be a function that accepts an argument, this argument is all props passed into `Gravatar` without `email`, `options` and `component` props
-```typescript
-// Our default
-const component = (props: any) => {
-    return (
-    <img { ...props }/>
-    );
-},
-
-// So
-<Gravatar email="example@example.com" className="left caps red" />
-
-// Renders
-<img
-    src="https://www.gravatar.com/avatar/23463b99b62a72f26ed677cc556c44e8"
-    className="left caps red"
-/>
-
-// Want to render in a different component or perhaps in React Native?
-// TBH I still need to test this ;)
-import { Image } from 'react-native';
-const component = (props: any) => {
-    return (
-        <Image source={{uri: props.src}}/>
-    );
-}
-<Gravatar email="example@example.com" component={component} />
-```
-
 
 ### Just the function
 If you just need the URL to the profile image of gravatar, you can omit the use of the component and call the function that the component calls directly.

@@ -3,7 +3,7 @@ import { getGravatarUrl, GravatarOptions } from './lib';
 
 export interface GravatarProps {
   email: string;
-  children(src: string): JSX.Element;
+  children(url: string): JSX.Element;
   options?: GravatarOptions;
 }
 
